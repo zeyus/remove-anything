@@ -14,7 +14,15 @@
   "permissions": [
     "contextMenus", "activeTab", "<all_urls>"
   ],
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "all_frames": true,
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
   "background": {
-    "scripts": ["index.js"]
+    "scripts": ["background.js"]
   }
 }
